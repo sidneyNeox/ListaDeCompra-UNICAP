@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap" rel="stylesheet">
+<!--     <script src="main.js" defer></script> -->
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de compras</title>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">Lista de compras</h1>
+    </header>
+    <main>
+        <div class="mainButtons">
+            <button type="button" class="button register" id="register">Cadastrar Produto</button>
+            <button type="button" class="button clearTable" id="clearTable">Limpar tabela</button>
+        </div>
+        <table id="tableClient" class="records">
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                    <th>Total Unit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Tabela aplicada com javascript -->
+            </tbody>
+            <tfooter>
+                <h1 id="result">Valor total dos produtos: R$ 0,00</h1>
+            </tfooter>
+        </table>
+        <div class="modal active" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2 id="titleModal">Cadastro de produto</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form id="form" class="modal-form">
+                    <input id="inputProduct" type="text" data-index="new" class="modal-field" placeholder="Produto" required>
+                    <input id="inputQuantity" type="number" class="modal-field" placeholder="Quantidade" min="1" max="999999" required>
+                    <input id="inputPrice" type="text" class="modal-field" placeholder="Valor" required onInput="mascaraMoeda(event);" >
+                </form>
+                <footer class="modal-footer">
+                    <button class="button save" id="save-form">Salvar</button>
+                    <button class="button cancel" id="cancel-form">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+    <footer>
+        By: Sidney Lima
+    </footer>
+</body>
+</html>
